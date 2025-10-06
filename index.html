@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Hassan Jatoi Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background-color 1s ease;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .text-block {
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Clients</a></li>
-      </ul>
-      <a href="#" class="contact-btn">Contact Me</a>
-    </nav>
-  </header>
+  <div class="container">
+    <img src="https://i.ibb.co/kVX8yyMB/1758259254497.jpg" alt="Hassan Jatoi" class="profile-img">
+    <div class="text-block">Hey: I'm Hassan Jatoi</div>
+  </div>
 
-  <main class="main-section">
-    <div class="left-content">
-      <h1>Hello,<br>I'm <span>Hassan Jatoi</span><br>Website Designer</h1>
-      <p>I am a skilled and passionate web designer with experience in creating visually appealing and user-friendly websites.</p>
-      <a href="#" class="hire-btn">Hire Me</a>
-    </div>
-    <div class="right-content">
-      <img src="https://i.ibb.co/ZRx8JJNX/1758259254497.jpg" alt="Profile Picture" />
-    </div>
-  </main>
+  <script>
+    const colors = ['#000000', '#1a1a2e', '#16213e', '#0f3460', '#53354a', '#903749'];
+    let index = 0;
+
+    setInterval(() => {
+      document.body.style.backgroundColor = colors[index];
+      index = (index + 1) % colors.length;
+    }, 2000);
+  </script>
 </body>
 </html>
