@@ -15,64 +15,7 @@
       transition: background 1s ease;
       background: linear-gradient(135deg, #000000, #1a1a1a);
     }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Hassan Jatoi Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      transition: background-color 1s ease;
-    }
 
-    .container {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-    }
-
-    .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-
-    .text-block {
-      font-size: 24px;
-      font-weight: bold;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <img src="https://i.ibb.co/kVX8yyMB/1758259254497.jpg" alt="Hassan Jatoi" class="profile-img">
-    <div class="text-block">Hey: I'm Hassan Jatoi</div>
-  </div>
-
-  <script>
-    const colors = ['#000000', '#1a1a2e', '#16213e', '#0f3460', '#53354a', '#903749'];
-    let index = 0;
-
-    setInterval(() => {
-      document.body.style.backgroundColor = colors[index];
-      index = (index + 1) % colors.length;
-    }, 2000);
-  </script>
-</body>
-</html>
     .container {
       display: flex;
       flex-direction: column;
@@ -113,7 +56,7 @@
       'linear-gradient(135deg, #00f2fe, #4facfe)'
     ];
     let i = 0;
-<link rel="stylesheet" href="style.css">
+
     setInterval(() => {
       document.body.style.background = gradients[i];
       i = (i + 1) % gradients.length;
