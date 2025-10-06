@@ -1,46 +1,38 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Orbitron', sans-serif;
-  height: 100vh;
-  background: linear-gradient(-45deg, #ff6a00, #ee0979, #00f2fe, #7fff00);
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hassan Jatoi Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Clients</a></li>
+      </ul>
+      <a href="#" class="contact-btn">Contact Me</a>
+    </nav>
+  </header>
 
-.wrapper {
-  text-align: center;
-}
+  <main class="main-section">
+    <div class="left-content">
+      <h1>Hello,<br>I'm <span>Hassan Jatoi</span><br>Website Designer</h1>
+      <p>I am a skilled and passionate web designer with experience in creating visually appealing and user-friendly websites.</p>
+      <a href="#" class="hire-btn">Hire Me</a>
+    </div>
+    <div class="right-content">
+      <img src="https://i.ibb.co/ZRx8JJNX/1758259254497.jpg" alt="Profile Picture" />
+    </div>
+  </main>
+</body>
+</html>
 
-.profile-pic {
-  width: 200px;
-  border-radius: 50%;
-  border: 5px solid #fff;
-  box-shadow: 0 0 20px #fff;
-  margin-bottom: 30px;
-}
 
-.glow-text {
-  font-size: 36px;
-  font-weight: bold;
-  color: #fff;
-  animation: colorCycle 2s infinite;
-  text-shadow: 0 0 10px #fff, 0 0 20px #ff6a00, 0 0 30px #ee0979;
-}
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
-@keyframes colorCycle {
-  0% { color: #ff6a00; }
-  25% { color: #ee0979; }
-  50% { color: #00f2fe; }
-  75% { color: #7fff00; }
-  100% { color: #ff6a00; }
-}
