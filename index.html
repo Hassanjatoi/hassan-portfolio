@@ -1,147 +1,136 @@
-/* Updated version with Hassan Jatoi profile picture integrated */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hassan Jatoi — Portfolio</title>
 
-import React from 'react' import { createRoot } from 'react-dom/client' import { motion } from 'framer-motion' import './index.css' import './app.css'
+  <style>
+    /* === Global Reset === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-const Nav = () => (
+    body {
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-  <nav className="nav">
-    <div className="logo">Hassan Jatoi</div>
-    <ul className="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#poetry">Poetry</a></li>
-      <li><a href="#stories">Stories</a></li>
-      <li><a href="#novels">Novels</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#hire">Hire Me</a></li>
-    </ul>
-  </nav>
-)const Hero = () => (
+    /* === Container === */
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
 
-  <section id="home" className="hero">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="hero-inner"
-    >
-      <img className="avatar" src="https://i.ibb.co/kVX8yyMB/1758259254497.jpg" alt="Hassan Jatoi" />
-      <h1>Welcome to My World of Words</h1>
-      <p className="subtitle">Poetry | Stories | Novels</p>
-      <motion.h2
-        animate={{ scale: [1, 1.06, 1], filter: ["blur(0px)", "blur(2px)", "blur(0px)"] }}
-        transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-        className="glow"
-      >
-        HI MY NAME IS HASSAN
-      </motion.h2>
-      <div className="cta">
-        <a className="btn" href="#hire">Hire Me</a>
-        <a className="btn ghost" href="#about">About</a>
-      </div>
-    </motion.div>
-  </section>
-)const Section = ({ id, title, children }) => (
+    /* === Profile Image === */
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #00ffff;
+      box-shadow: 0 0 25px #00ffff;
+      background-image: url('https://i.ibb.co/kVX8yyMB/1758259254497.jpg');
+      background-size: cover;
+      background-position: center;
+      transition: all 0.5s ease;
+    }
 
-  <section id={id} className="content-section">
-    <motion.h3
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >{title}</motion.h3>
-    <div className="content-grid">{children}</div>
-  </section>
-)function App(){ return ( <div className="app"> <div className="animated-bg" aria-hidden></div> <Nav /> <main> <Hero />
+    .profile-pic:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #ff00ff;
+    }
 
-<Section id="poetry" title="Poetry">
-      <article className="card">
-        <h4>Ghazal of the Night</h4>
-        <p>Short excerpt of a melancholic ghazal... Lorem ipsum dolor sit amet.</p>
-        <a className="link" href="#">Read more</a>
-      </article>
-      <article className="card">
-        <h4>Whispers</h4>
-        <p>Words that float between dawn and dusk — a poem collection preview.</p>
-        <a className="link" href="#">Read more</a>
-      </article>
-    </Section>
+    /* === Name & Title === */
+    h1 {
+      margin-top: 20px;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glowText 4s ease-in-out infinite;
+    }
 
-    <Section id="stories" title="Stories">
-      <article className="card">
-        <h4>The Small Town</h4>
-        <p>A short story about belonging and the sea of memories.</p>
-        <a className="link" href="#">Read</a>
-      </article>
-      <article className="card">
-        <h4>Broken Compass</h4>
-        <p>When maps fail, hearts find strange directions.</p>
-        <a className="link" href="#">Read</a>
-      </article>
-    </Section>
+    @keyframes glowText {
+      0%, 100% { text-shadow: 0 0 10px #00ffff; }
+      50% { text-shadow: 0 0 20px #ff00ff; }
+    }
 
-    <Section id="novels" title="Novels">
-      <article className="card big">
-        <h4>Lonely Horizon</h4>
-        <p>Novel excerpt — a long-form story about exile, love and return.</p>
-        <a className="link" href="#">Preview</a>
-      </article>
-    </Section>
+    h2 {
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
 
-    <section id="about" className="content-section about">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="about-inner"
-      >
-        <h3>About Hassan Jatoi</h3>
-        <p>I am a poet, novelist and ghostwriter. I design words and websites — telling stories that linger. Based in a small town — dreaming big.</p>
-        <div className="about-row">
-          <div>
-            <strong>Skills</strong>
-            <ul>
-              <li>Poetry & Ghazals</li>
-              <li>Fiction & Short Stories</li>
-              <li>Website portfolio design</li>
-            </ul>
-          </div>
-          <div>
-            <strong>Contact</strong>
-            <p>Email: hassan@example.com</p>
-            <p>WhatsApp: +92 300 0000000</p>
-            <a className="btn" href="https://wa.me/923000000000" target="_blank" rel="noreferrer">Message on WhatsApp</a>
-          </div>
-        </div>
-      </motion.div>
-    </section>
+    /* === Buttons === */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
 
-    <section id="hire" className="content-section hire">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="hire-card"
-      >
-        <h3>Hire Me</h3>
-        <p>I provide ghostwriting, novel writing and portfolio design. Let's build something beautiful together.</p>
-        <a className="btn" href="mailto:hassan@example.com">Email Me</a>
-        <a className="btn ghost" href="/resume.pdf">Download CV</a>
-      </motion.div>
-    </section>
+    .btn:hover {
+      background: linear-gradient(90deg, #ff00ff, #00ffff);
+      box-shadow: 0 0 20px #ff00ff;
+      transform: scale(1.1);
+    }
 
-  </main>
+    /* === Footer === */
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #666;
+    }
 
-  <a className="floating-wa" href="https://wa.me/923000000000" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden>
-      <path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.55 4.08 1.59 5.85L0 24l6.39-1.65A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12 0-3.2-1.25-6.18-3.48-8.52zM12 22.01c-1.86 0-3.67-.5-5.24-1.43l-.38-.22-3.79.98.98-3.7-.25-.38A9.98 9.98 0 012 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z" />
-    </svg>
-  </a>
+    /* === Animated Background Dots === */
+    .dots {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: moveDots 20s linear infinite;
+      z-index: -1;
+    }
 
-  <footer className="footer">
-    © {new Date().getFullYear()} Hassan Jatoi — All rights reserved
-  </footer>
-</div>
+    @keyframes moveDots {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+  </style>
+</head>
 
-) }
+<body>
+  <div class="dots"></div>
 
-createRoot(document.getElementById('root')).render(<App />)
+  <div class="container">
+    <div class="profile-pic"></div>
+    <h1>Hassan Jatoi</h1>
+    <h2>Poet | Novelist | Ghostwriter | Portfolio Designer</h2>
 
+    <a href="#poetry" class="btn">My Poetry</a>
+    <a href="#contact" class="btn">Contact Me</a>
+
+    <footer>
+      © 2025 Hassan Jatoi. All rights reserved.
+    </footer>
+  </div>
+</body>
+                                               </html>
