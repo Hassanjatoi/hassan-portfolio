@@ -1,41 +1,46 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #ff6a00, #ee0979);
-  color: white;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ff6a00, #ee0979, #00f2fe, #7fff00);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
   text-align: center;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: rgba(0,0,0,0.3);
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.social-links {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.social-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.hero {
-  margin-top: 50px;
-}
-
 .profile-pic {
-  width: 150px;
+  width: 200px;
   border-radius: 50%;
-  border: 4px solid white;
+  border: 5px solid #fff;
+  box-shadow: 0 0 20px #fff;
+  margin-bottom: 30px;
+}
+
+.glow-text {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  animation: colorCycle 2s infinite;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff6a00, 0 0 30px #ee0979;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes colorCycle {
+  0% { color: #ff6a00; }
+  25% { color: #ee0979; }
+  50% { color: #00f2fe; }
+  75% { color: #7fff00; }
+  100% { color: #ff6a00; }
 }
