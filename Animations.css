@@ -1,0 +1,31 @@
+/* Background gradient slow animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Use on body or main container */
+.animated-bg {
+  background: linear-gradient(-45deg, #2e3192, #1bffff, #ff0080, #ff8c00);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+/* Button glowing effect */
+.glow-btn {
+  position: relative;
+  background: #1bffff;
+  color: #000;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #1bffff, 0 0 20px #1bffff;
+  transition: all 0.3s ease;
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+  transform: scale(1.05);
+}
